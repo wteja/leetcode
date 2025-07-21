@@ -6,9 +6,8 @@ func twoSum(nums []int, target int) []int {
 	pair := []int{}
 	set := map[int]int{}
 	for i, n := range nums {
-		remain := target - n
 		if _, ok := set[n]; !ok {
-			set[remain] = i
+			set[target-n] = i
 		} else {
 			pair = append(pair, set[n])
 			pair = append(pair, i)
